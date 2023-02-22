@@ -1,0 +1,279 @@
+:root {
+    --primary-color: royalblue;
+    --btn-grey: #bbc5ce;
+    --btn-green: #20a162;
+    --btn-ogreen: #166c42;
+    --btn-red: #de1c31;
+    --btn-ored: #bc1727;
+}
+
+#container {
+    * {
+        margin: 0;
+        box-sizing: border-box;
+        // outline: 1px solid #bb2728;
+    }
+    background-color: #f3f3f3;
+    //max-width: 1200px;
+    width: 60;
+    height: 200vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #cart-container {
+        margin: 1rem;
+        max-width: 1200px;
+        width: 100%;
+        // background-color: bisque;
+        .cart-select {
+            .cart-top {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                .cart-left {
+                    width: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 1rem;
+                    padding: 1rem;
+                    .cart-notice {
+                        border-radius: 1rem;
+                        padding: 1rem;
+                        background-color: #f7e2e2;
+                        margin: 1rem 0 1rem 0;
+                    }
+                    .order {
+                        width: 100%;
+                        /* height: 100vh; */
+                        background-color: rgb(242, 242, 242);
+                        padding: 1rem;
+
+                        .item {
+                            position: relative;
+                            transition: opacity 0.5s;
+                            height: 100%;
+
+                            svg {
+                                position: absolute;
+                                right: 0;
+                                top: 0;
+                                width: 6%;
+                                height: 15%;
+                                &:hover {
+                                    cursor: pointer;
+                                }
+                            }
+                            // min-width: 40vw;
+                            border-radius: 15px;
+                            margin: 1rem 0 1rem 0;
+                            padding: 2rem 0 2rem 0rem;
+                            width: 100%;
+                            /* height: auto; */
+                            display: flex;
+                            /* justify-content: space-between; */
+                            background-color: rgb(255, 255, 255);
+
+                            .item-pic {
+                                min-width: 15rem;
+                                height: 10rem;
+                                margin-left: 1rem;
+                                display: flex;
+                                align-items: center;
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    object-fit: fill;
+                                }
+                            }
+                            .item-info {
+                                width: 100%;
+                                margin: 1rem;
+
+                                div {
+                                    margin-top: 1rem;
+                                }
+
+                                /* justify-content: space-between; */
+                                background-color: rgb(255, 255, 255);
+                                .item-title {
+                                    padding: 0 0 0 0;
+                                    // width: 100%;
+                                    height: 3rem;
+                                    display: flex;
+                                    justify-content: space-between;
+                                    // outline: 1px solid #bb2728;
+                                    p {
+                                        height: 100%;
+                                        // width: 100%;
+                                        font-weight: bold;
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        // outline: 1px solid #bb2728;
+                                    }
+                                }
+                                .item-qty {
+                                    display: flex;
+                                    // justify-content: space-between;
+                                    align-items: center;
+                                    label {
+                                        margin: auto;
+                                    }
+
+                                    .itemcount {
+                                        margin-top: 0;
+                                        // width: 100%;
+                                        display: flex;
+                                        align-items: center;
+                                        box-sizing: border-box;
+                                        .getitmcount {
+                                            // padding: 1rem;
+                                            text-align: center;
+                                            width: 3rem;
+                                            height: 1%;
+                                            border: 1px solid #ccc;
+                                            border-radius: 5px;
+                                            box-sizing: border-box;
+                                        }
+                                        .lesitm {
+                                            position: relative;
+
+                                            &:hover {
+                                                cursor: pointer;
+                                                background-color: var(--btn-red);
+                                                color: #f3f3f3;
+                                            }
+                                            border-radius: 0.5rem;
+                                            margin: 1rem;
+                                            padding: 0 1rem 0 1rem;
+                                            height: 10%;
+                                            background-color: var(--btn-grey);
+                                            border: 1px solid #ccc;
+                                            border-radius: 5px;
+                                            box-sizing: border-box;
+                                            &::after {
+                                                content: "";
+                                                position: absolute;
+                                                inset: 0;
+                                                border-radius: inherit;
+                                                box-shadow: 0 0 0 10px var(--btn-red);
+                                                opacity: 0;
+                                                transition: 0.4s;
+                                            }
+                                            &:active::after {
+                                                box-shadow: 0 0 0 2px var(--btn-ored);
+                                                opacity: 0.5;
+                                                transition: 0s;
+                                            }
+                                        }
+                                        .additm {
+                                            position: relative;
+                                            &:hover {
+                                                cursor: pointer;
+                                                background-color: var(--btn-green);
+                                                color: #f3f3f3;
+                                            }
+                                            border-radius: 0.5rem;
+                                            margin: 1rem;
+                                            padding: 0 1rem 0 1rem;
+                                            background-color: var(--btn-grey);
+                                            border-color: currentColor;
+                                            &::after {
+                                                content: "";
+                                                position: absolute;
+                                                inset: 0;
+                                                border-radius: inherit;
+                                                box-shadow: 0 0 0 10px var(--btn-green);
+                                                opacity: 0;
+                                                transition: 0.4s;
+                                            }
+                                            &:active::after {
+                                                box-shadow: 0 0 0 2px var(--btn-ogreen);
+                                                opacity: 0.5;
+                                                transition: 0s;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .top-right {
+                    position: sticky;
+                    top: 0;
+                    // outline: #166c42 1px solid;
+                    width: 50%;
+                    height: max-content;
+                    display: flex;
+                    flex-direction: column;
+                    margin: 15rem 1rem 1rem 1rem;
+                    padding: 1rem;
+
+                    .coupon {
+                        display: flex;
+                        justify-content: space-between;
+                        background-color: #ffff;
+                        padding: 1rem;
+                        border-radius: 1rem;
+                        width: 100%;
+                        input {
+                            width: 100%;
+                            border: 1px solid #ccc;
+                            border-radius: 4px;
+                            box-sizing: border-box;
+                        }
+                        button {
+                            width: 5rem;
+                            color: #000;
+                            padding: 0.5rem;
+                            border: 1px solid #ccc;
+                            border-radius: 5px;
+                            box-sizing: border-box;
+                            background-color: #fff;
+                        }
+                    }
+                    .coupon-success {
+                        background-color: #9dcfb7;
+                        border-radius: 0.5rem;
+                        padding: 1rem;
+                        width: 100%;
+                        height: auto;
+                        font-weight: bold;
+                    }
+                    .total {
+                        width: 100%;
+                        margin: 1rem 0 1rem 0;
+                        background-color: #ffff;
+                        padding: 1rem;
+                        border-radius: 1rem;
+                        div {
+                            margin: 1rem 0 0 0;
+                        }
+                    }
+
+                    .myaddsrt {
+                        font-weight: bold;
+                        display: none;
+                        animation-duration: 0.3s;
+
+                        &:active {
+                            animation: none;
+                        }
+                    }
+
+                    button {
+                        width: 100%;
+                        color: rgb(255, 255, 255);
+                        padding: 0.5rem;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-sizing: border-box;
+                        background-color: #bb2728;
+                    }
+                }
+            }
+        }
+    }
+}
