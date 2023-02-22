@@ -78,6 +78,7 @@ const Login = () => {
                 localStorage.setItem('user', JSON.stringify(res.user))
                 setIsLoggedIn(true);
                 history.push('/member')
+                window.location.reload(false);
             })
             .catch((err) => {
                 alert(err)
